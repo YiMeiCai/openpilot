@@ -148,8 +148,10 @@ class CAR(Platforms):
     wmis={'3FM'}, vds_codes={'CR9'}, years={MY_2021, MY_2022, MY_2023, MY_2024},
   )
   FORD_EDGE_MK2 = FordPlatformConfig(
-    [FordCarDocs("Ford Edge 2022")],
-    CarSpecs(mass=1691, steerRatio=15.3, wheelbase=2.824),
+    # BluePilot China Edge: covers 2015-2022 Edge (CD4 platform, 2850mm wheelbase).
+    # Specs re-baselined for the Chinese-built 2015 Edge 2.0T AWD Titanium (curb mass ~1870 kg).
+    [FordCarDocs("Ford Edge 2015-22")],
+    CarSpecs(mass=1870, steerRatio=15.3, wheelbase=2.85),
     flags=FordFlags.ALT_STEER_ANGLE,
     wmis={'2FM'}, vds_codes={'PK4'}, years={MY_2022},
   )
