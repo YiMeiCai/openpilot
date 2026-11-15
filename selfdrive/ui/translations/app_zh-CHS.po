@@ -3056,3 +3056,579 @@ msgstr "忽略负俯仰补偿，使下坡时不额外减速。"
 
 msgid "When enabled, sunnypilot will attempt to manage the built-in cruise control buttons by emulating button presses for limited longitudinal control."
 msgstr "启用后，sunnypilot 将尝试通过模拟按钮按压来管理内置巡航控制按键，以提供有限的纵向控制。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "0.5 second"
+msgstr "0.5 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "1 second"
+msgstr "1 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "2 seconds"
+msgstr "2 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "3 seconds"
+msgstr "3 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "1 m"
+msgstr "1 米"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "2 m"
+msgstr "2 米"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "meters"
+msgstr "米"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "ms"
+msgstr "毫秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "second"
+msgstr "秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "1s"
+msgstr "1 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "3s"
+msgstr "3 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "5s"
+msgstr "5 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "10s"
+msgstr "10 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "15s"
+msgstr "15 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "30s"
+msgstr "30 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "10 s"
+msgstr "10 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "20 s"
+msgstr "20 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "30 s"
+msgstr "30 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "40 s"
+msgstr "40 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "50 s"
+msgstr "50 秒"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "1m"
+msgstr "1 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "3m"
+msgstr "3 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "5m"
+msgstr "5 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "10m"
+msgstr "10 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "15m"
+msgstr "15 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "30m"
+msgstr "30 分钟"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "1h"
+msgstr "1 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "2h"
+msgstr "2 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "3h"
+msgstr "3 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "5h"
+msgstr "5 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "10h"
+msgstr "10 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "24h"
+msgstr "24 小时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "30h (Default)"
+msgstr "30 小时（默认）"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Alerts & Extras"
+msgstr "提醒与附加功能"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Always Offroad"
+msgstr "始终离线"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Angle Mode Tuning"
+msgstr "角度模式调校"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Automatic lane change timing and behavior"
+msgstr "自动变道的时机与行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Blinker Control"
+msgstr "转向灯控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Brightness & Timeout"
+msgstr "亮度与超时"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Camera"
+msgstr "摄像头"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Camera and audio recording during drives"
+msgstr "行驶过程中的摄像头与音频录制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Camera position and calibration"
+msgstr "摄像头位置与校准"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Car State Only"
+msgstr "仅车辆状态"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Car State Priority"
+msgstr "车辆状态优先"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Connectivity"
+msgstr "网络连接"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Control software updates"
+msgstr "控制软件更新"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Core openpilot feature toggles"
+msgstr "openpilot 核心功能开关"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Custom ACC Speed Intervals"
+msgstr "自定义 ACC 速度间隔"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Custom ACC Speed Intervals Settings"
+msgstr "自定义 ACC 速度间隔设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Debug tools, remote access, and advanced services"
+msgstr "调试工具、远程访问与高级服务"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Device behavior, units, and recording settings"
+msgstr "设备行为、单位与录制设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Developer UI Info"
+msgstr "开发者界面信息"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Disengage Cruise on Accelerator Pedal"
+msgstr "踩加速踏板时取消巡航"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Driving model behavior and camera calibration"
+msgstr "驾驶模型行为与摄像头校准"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Dynamic Experimental Control"
+msgstr "动态实验模式控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Enable Custom ACC Speed Intervals"
+msgstr "启用自定义 ACC 速度间隔"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Force Offroad Mode"
+msgstr "强制离线模式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Ford Lateral Control"
+msgstr "福特横向控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "General"
+msgstr "常规"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "HUD Elements"
+msgstr "HUD 显示元素"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "HUD overlays, alerts, and on-screen display elements"
+msgstr "HUD 叠加层、提醒与屏幕显示元素"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "High Speed Dampening"
+msgstr "高速阻尼"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "High Speed Factor"
+msgstr "高速系数"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Human Turn Detection (HTD)"
+msgstr "人工转弯检测（HTD）"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Hyundai / Kia / Genesis Settings"
+msgstr "现代 / 起亚 / 捷尼赛思设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Information"
+msgstr "信息"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lane Change"
+msgstr "变道"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lane Change Factor"
+msgstr "变道系数"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lane desire and lead-vehicle awareness tuning"
+msgstr "车道意图与前车感知调校"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Language"
+msgstr "语言"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lateral Control"
+msgstr "横向控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lateral control, lane changes, and steering behavior"
+msgstr "横向控制、变道与转向行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Lateral pause behavior during turn signals"
+msgstr "打转向灯时的横向暂停行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Longitudinal control, speed limits, and cruise behavior"
+msgstr "纵向控制、限速与巡航行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Low Speed Factor"
+msgstr "低速系数"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "MADS Settings"
+msgstr "MADS 设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Map"
+msgstr "地图"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Map Data Only"
+msgstr "仅地图数据"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Map Data Priority"
+msgstr "地图数据优先"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Model Behavior"
+msgstr "模型行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Neural network lateral control for supported models"
+msgstr "受支持模型的神经网络横向控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Overlays shown on the driving screen"
+msgstr "驾驶画面上显示的叠加层"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Percentage"
+msgstr "百分比"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Power, boot, and unit preferences"
+msgstr "电源、启动与单位偏好"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Recording"
+msgstr "录制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Remote access and debugging interfaces"
+msgstr "远程访问与调试接口"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Screen brightness, timeout, and interactivity settings"
+msgstr "屏幕亮度、超时与交互设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Screen dimming and sleep behavior while driving"
+msgstr "行驶中的屏幕变暗与休眠行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Smart Cruise Control"
+msgstr "智能巡航控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Software update preferences"
+msgstr "软件更新偏好"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed Limit Assist Mode"
+msgstr "限速辅助模式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed Limit Offset Type"
+msgstr "限速偏移类型"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed Limit Offset Value"
+msgstr "限速偏移值"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed Limit Settings"
+msgstr "限速设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed Limits"
+msgstr "限速"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speed limit detection and offset behavior"
+msgstr "限速识别与偏移行为"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Speedometer and debug display options"
+msgstr "车速表与调试显示选项"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Standstill Timer"
+msgstr "静止计时器"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Steering torque tuning and lateral control method"
+msgstr "转向扭矩调校与横向控制方式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Subaru Settings"
+msgstr "斯巴鲁设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Tesla Rainbow Mode"
+msgstr "Tesla 彩虹模式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Tesla Settings"
+msgstr "Tesla 设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Test Maneuvers"
+msgstr "测试动作"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Torque Control"
+msgstr "扭矩控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Torque Settings"
+msgstr "扭矩设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Toyota / Lexus Settings"
+msgstr "丰田 / 雷克萨斯设置"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Traffic light alerts and visual flair"
+msgstr "红绿灯提醒与视觉效果"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Updates"
+msgstr "更新"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Vision"
+msgstr "视觉"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "BluePilot Ford angle-primary steering and tuning"
+msgstr "BluePilot 福特角度优先转向与调校"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "A chime and on-screen alert will play when the traffic light you are waiting for turns green and you have no vehicle in front of you. On-screen visual alert is only available on comma 3X. Note: This chime is only designed as a notification. It is the driver's responsibility to observe their environment and make decisions accordingly."
+msgstr "等待的红灯变绿且前方无车时，会播放提示音并显示屏幕提醒。屏幕视觉提醒仅 comma 3X 支持。注意：该提示音仅作通知之用，观察路况并作出判断仍是驾驶员的责任。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "A chime and on-screen alert will play when you are stopped, and the vehicle in front of you start moving. On-screen visual alert is only available on comma 3X. Note: This chime is only designed as a notification. It is the driver's responsibility to observe their environment and make decisions accordingly."
+msgstr "停车等待时前车起步，会播放提示音并显示屏幕提醒。屏幕视觉提醒仅 comma 3X 支持。注意：该提示音仅作通知之用，观察路况并作出判断仍是驾驶员的责任。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Allow device to learn and adapt car's steering response time"
+msgstr "允许设备学习并自适应车辆转向响应时间"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Apply a custom timeout for settings UI. This is the time after which settings UI closes automatically if user is not interacting with the screen."
+msgstr "为设置界面设置自定义超时时间。若用户未操作屏幕，超过该时间后设置界面将自动关闭。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Blocks lane change when the model sees a road edge on the side you signal."
+msgstr "当模型检测到打灯一侧有道路边缘时，阻止变道。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Controls state of the device after boot/sleep. Default: Device will boot/wake-up normally and will be ready to engage. Offroad: Device will be in Always Offroad mode after boot/wake-up."
+msgstr "控制设备启动/唤醒后的状态。默认：正常启动/唤醒并可随时激活；始终离线：启动/唤醒后设备保持离线模式。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "DANGER: enabling these maneuvers replaces normal driving behavior with deterministic test sequences. Each toggle requires explicit confirmation per write. Use only in a closed environment."
+msgstr "危险：启用这些测试动作会用固定测试序列替代正常驾驶行为。每次写入开关都需明确确认，仅可在封闭场地使用。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Device will automatically shutdown after set time once the engine is turned off. 30h is the default."
+msgstr "发动机熄火后，设备将在设定时间自动关机。默认 30 小时。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Display a rainbow effect on the path the model wants to take. It does not affect driving in any way."
+msgstr "在模型规划路径上显示彩虹效果，不影响任何驾驶行为。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Displays the name of the road the car is traveling on. The OpenStreetMap database of the location must be downloaded to fetch the road name."
+msgstr "显示当前行驶道路名称。需先下载当地的 OpenStreetMap 地图数据才能获取路名。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Enable MADS. Disable toggle to revert back to stock sunnypilot engagement/disengagement."
+msgstr "启用 MADS。关闭此开关可恢复原版 sunnypilot 的激活/取消逻辑。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Enable Modular Assistive Driving System (MADS)"
+msgstr "启用模块化辅助驾驶系统（MADS）"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Engage lateral and longitudinal control with cruise control engagement. Note: Once lateral control is engaged via UEM, it will remain engaged until it is manually disabled via the MADS button or car shut off."
+msgstr "随巡航激活同时启用横向与纵向控制。注意：通过 UEM 启用横向控制后，将持续保持激活，直到通过 MADS 按钮手动关闭或车辆熄火。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "If you are driving at 20 mph (32 km/h) or below and have your blinker on, the car will plan a turn in that direction at the nearest drivable path. This prevents situations (like at red lights) where the car might plan the wrong turn direction."
+msgstr "当车速低于 20 mph（32 km/h）且打着转向灯时，车辆会在最近的可行驶路径上按该方向规划转弯，避免在红灯等场景下规划出错误的转弯方向。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Let the model decide when to use sunnypilot ACC or sunnypilot End to End Longitudinal."
+msgstr "由模型决定使用 sunnypilot ACC 还是端到端纵向控制。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Measure curvature from the steering pinion angle instead of the RCM yaw rate (for vehicles with a faulty yaw sensor). Requires the safety firmware to match."
+msgstr "使用转向小齿轮角度而非 RCM 横摆角速度计算曲率（适用于横摆传感器故障的车辆）。需要匹配的安全固件。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Pause lateral control during manual turns and resume when complete."
+msgstr "人工转弯时暂停横向控制，转弯结束后恢复。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Replaces normal lateral control with a deterministic test sequence. NOT for road use."
+msgstr "用固定测试序列替代正常横向控制，禁止在公共道路使用。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Replaces normal longitudinal control with a deterministic test sequence. NOT for road use."
+msgstr "用固定测试序列替代正常纵向控制，禁止在公共道路使用。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Select the version of Torque Control Tune to use."
+msgstr "选择要使用的扭矩控制调校版本。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Set a timer to delay the auto lane change operation when the blinker is used. No nudge on the steering wheel is required to auto lane change if a timer is set. Default is Nudge."
+msgstr "设置打转向灯后自动变道的延迟时间。设置计时后无需轻推方向盘即可自动变道。默认为轻推（Nudge）。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Set the maximum speed for lane turn desires."
+msgstr "设置车道转弯意图的最高车速。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Toggle to enable a delay timer for lane changes when blind spot monitoring (BSM) detects a vehicle in your blind spot."
+msgstr "启用后，当盲区监测（BSM）检测到盲区内有车辆时，将延迟变道。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Toggle visibility of advanced sunnypilot controls. This only changes the visibility of the toggles; it does not change the actual enabled/disabled state."
+msgstr "切换高级 sunnypilot 控制项的显示。仅影响开关是否可见，不改变实际启用/关闭状态。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Use a neural network for lateral control instead of the default torque controller."
+msgstr "使用神经网络进行横向控制，替代默认扭矩控制器。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Virtually shift camera's perspective to move model's center to Left(+ values) or Right (- values)"
+msgstr "虚拟调整摄像头视角，将模型中心左移（正值）或右移（负值）"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "WARNING: sunnypilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB). On this car, sunnypilot defaults to the car's built-in ACC instead of sunnypilot's longitudinal control. Enable this to switch to sunnypilot longitudinal control. Enabling Experimental mode is recommended when enabling sunnypilot longitudinal control alpha. Changing this setting will restart sunnypilot if the car is powered on."
+msgstr "警告：本车型的 sunnypilot 纵向控制仍处于 alpha 阶段，并会禁用自动紧急制动（AEB）。本车型默认使用原厂 ACC，而非 sunnypilot 纵向控制；启用本项后切换为 sunnypilot 纵向控制。建议同时启用实验模式。更改此设置后，若车辆已上电，sunnypilot 将重启。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "When enabled, pressing the accelerator pedal will disengage longitudinal control."
+msgstr "启用后，踩下加速踏板将取消纵向控制。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "When enabled, software updates will be off. This requires a reboot to take effect."
+msgstr "启用后将关闭软件更新，需重启生效。"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "[TEST] Lateral Maneuver Mode"
+msgstr "【测试】横向动作模式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "[TEST] Longitudinal Maneuver Mode"
+msgstr "【测试】纵向动作模式"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Alpha Longitudinal"
+msgstr "Alpha 纵向控制"
+
+#: zh-CHS 补全（settings_ui.json / BluePilot Portal）
+msgid "Always-on Driver Monitor"
+msgstr "始终开启驾驶员监控"
