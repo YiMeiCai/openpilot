@@ -3632,3 +3632,35 @@ msgstr "Alpha 纵向控制"
 #: zh-CHS 补全（settings_ui.json / BluePilot Portal）
 msgid "Always-on Driver Monitor"
 msgstr "始终开启驾驶员监控"
+
+#: zh-CHS 补全（BP 工具箱 / bp_tools.py）
+msgid "BP Tools"
+msgstr "BP 工具箱"
+
+msgid "Low Speed Roll Warning (Beta)"
+msgstr "低速前溜告警（Beta）"
+
+msgid "A red flashing alert will be shown when the vehicle creeps forward at low speed towards the lead vehicle.<br>Note: This alert is only designed as a notification. It is the driver's responsibility to keep the vehicle under control at all times."
+msgstr "车辆低速向前溜动靠近前车时，将显示红色闪烁告警。<br>注意：该告警仅作提示用途，驾驶员须全程保持对车辆的控制。"
+
+msgid "Roll Warning Distance"
+msgstr "告警触发距离"
+
+msgid "Lead vehicle distance below which the alert is shown."
+msgstr "与前车距离小于该值时触发告警。"
+
+msgid "Roll Warning Speed Limit"
+msgstr "告警触发限速"
+
+msgid "Only trigger the alert below this speed."
+msgstr "仅低于该车速时触发告警。"
+
+msgid "Driver Camera On Reverse"
+msgstr "倒挡显示驾驶员摄像头"
+
+msgid "Automatically show the driver monitoring camera on the driving screen while the gear is in reverse."
+msgstr "挂入倒挡时，在行驶界面自动显示驾驶员监测摄像头。"
+
+msgid "BRAKE! LEAD CLOSE"
+msgstr "减速！前车过近"
+

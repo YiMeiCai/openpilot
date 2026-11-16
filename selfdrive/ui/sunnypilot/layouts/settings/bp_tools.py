@@ -54,7 +54,7 @@ class BPToolsLayout(Widget):
   def _initialize_items(self):
     self._roll_warn_toggle = toggle_item_sp(
       title=lambda: tr("Low Speed Roll Warning (Beta)"),
-      description=ROLL_WARN_DESCRIPTION,
+      description=lambda: tr(ROLL_WARN_DESCRIPTION),
       param="LeadRollWarnEnabled",
       initial_state=ui_state.params.get_bool("LeadRollWarnEnabled"),
     )
