@@ -55,6 +55,10 @@ class ModelRenderer(Widget, ChevronMetrics, ModelRendererSP):
     self._lane_line_probs = np.zeros(4, dtype=np.float32)
     self._road_edge_stds = np.zeros(2, dtype=np.float32)
     self._lead_vehicles = [LeadVehicle(), LeadVehicle()]
+    # Low-pass filters for the chevron anchor: raw radar yRel is very noisy at range and
+    # made the lead arrow hop between lanes.
+    self._lead_pt_filters = [[FirstOrderFilter(0.0, 0.25, 1 / 20), FirstOrderFilter(0.0, 0.25, 1 / 20)] for _ in range(2)]
+    self._lead_pt_valid = [False, False]
     self._path_offset_z = HEIGHT_INIT[0]
     self._counter = -1
     self._camera_offset = ui_state.params.get("CameraOffset", return_default=True) if ui_state.active_bundle else 0.0
@@ -154,6 +158,20 @@ class ModelRenderer(Widget, ChevronMetrics, ModelRendererSP):
     self._road_edge_stds = np.array(model.roadEdgeStds, dtype=np.float32)
     self._acceleration_x = np.array(model.acceleration.x, dtype=np.float32)
 
+  def _smooth_lead_point(self, idx: int, point: tuple[float, float], d_rel: float) -> tuple[float, float]:
+    """Low-pass the chevron anchor so the lead arrow stays put instead of hopping between lanes."""
+    fx, fy = self._lead_pt_filters[idx]
+    if not self._lead_pt_valid[idx]:
+      fx.x, fy.x = point[0], point[1]
+      self._lead_pt_valid[idx] = True
+      return point
+
+    # Distant leads are noisier, so smooth them harder.
+    alpha = float(np.clip(0.05 + 0.30 * np.exp(-max(d_rel, 1.0) / 12.0), 0.05, 0.35))
+    fx.x = fx.x + alpha * (point[0] - fx.x)
+    fy.x = fy.x + alpha * (point[1] - fy.x)
+    return (fx.x, fy.x)
+
   def _update_leads(self, radar_state, path_x_array):
     """Update positions of lead vehicles"""
     self._lead_vehicles = [LeadVehicle(), LeadVehicle()]
@@ -166,9 +184,17 @@ class ModelRenderer(Widget, ChevronMetrics, ModelRendererSP):
 
         # Get z-coordinate from path at the lead vehicle position
         z = self._path.raw_points[idx, 2] if idx < len(self._path.raw_points) else 0.0
-        point = self._map_to_screen(d_rel, -y_rel + self._camera_offset, z + self._path_offset_z)
+        # Floor the projected distance: below ~1 m the perspective projection explodes and
+        # the chevron jumps around the screen.
+        d_rel_view = max(d_rel, 1.0)
+        point = self._map_to_screen(d_rel_view, -y_rel + self._camera_offset, z + self._path_offset_z)
         if point:
+          point = self._smooth_lead_point(i, point, d_rel)
           self._lead_vehicles[i] = self._update_lead_vehicle(d_rel, v_rel, point, self._rect)
+        else:
+          self._lead_pt_valid[i] = False
+      else:
+        self._lead_pt_valid[i] = False
 
   def _update_model(self, lead, path_x_array):
     """Update model visualization data based on model message"""

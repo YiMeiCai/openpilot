@@ -15,12 +15,20 @@ from openpilot.system.ui.lib.application import gui_app, FontWeight
 from openpilot.system.ui.lib.multilang import tr, tr_noop
 from openpilot.system.ui.lib.text_measure import measure_text_cached
 
+try:
+  from openpilot.common.swaglog import cloudlog
+except Exception:  # pragma: no cover - swaglog is always present on device
+  cloudlog = None
+
 
 # Low speed roll warning: creeping forward towards the lead vehicle at standstill
 ROLL_WARN_DIST_MIN, ROLL_WARN_DIST_MAX = 1.0, 10.0    # meters
 ROLL_WARN_VMAX_MIN, ROLL_WARN_VMAX_MAX = 3.0, 30.0    # km/h
 ROLL_WARN_TEXT = tr_noop("BRAKE! LEAD CLOSE")
 ROLL_WARN_BLINK_HZ = 3.0
+ROLL_WARN_VREL_MIN = -0.05    # m/s, any real closing rate counts (radar is coarse below 1 km/h)
+ROLL_WARN_VEGO_MIN = 0.12     # m/s, the car has to actually be rolling forward
+ROLL_WARN_HOLD_S = 0.8        # keep flashing through radar dropouts / speed blips
 
 # Values written by the legacy 3-button selector (the param held an index 0/1/2)
 _ROLL_WARN_LEGACY_DIST = (2.0, 3.5, 5.0)
@@ -64,6 +72,8 @@ class ChevronMetrics:
   def __init__(self):
     self._lead_status_alpha: float = 0.0
     self._font = gui_app.font(FontWeight.SEMI_BOLD)
+    self._roll_warn_hold_until: float = 0.0
+    self._roll_warn_log_ts: float = 0.0
 
   def update_alpha(self, has_lead: bool):
     """Update the alpha value for fade in/out animation"""
@@ -163,42 +173,83 @@ class ChevronMetrics:
       # Draw text
       rl.draw_text_ex(self._font, line, rl.Vector2(x, y), font_size, 0, text_color)
 
+  def _roll_warn_enabled(self) -> bool:
+    """Read the enable flag, tolerating a param build that does not know the key yet."""
+    try:
+      value = ui_state.params.get_bool("LeadRollWarnEnabled")
+    except Exception:
+      value = None
+
+    if value is None:
+      try:
+        value = ui_state.params.get("LeadRollWarnEnabled", return_default=True)
+      except Exception:
+        value = None
+
+    if isinstance(value, bool):
+      return value
+    if value is None:
+      return False
+    return str(value).strip().lower() in ("1", "true", "yes")
+
   def _roll_warn_thresholds(self) -> tuple[float, float] | None:
     """Return (distance_m, v_ego_max_ms) while the low speed roll warning is enabled."""
-    try:
-      if not ui_state.params.get_bool("LeadRollWarnEnabled"):
-        return None
-    except Exception:
-      # Param key unavailable (stale build) - never let the render loop die over it
+    if not self._roll_warn_enabled():
       return None
 
     dist = _read_roll_warn_dist()
     vmax = _read_roll_warn_vmax() * CV.KPH_TO_MS
     return dist, vmax
 
+  def _roll_warn_log(self, message: str):
+    """Throttled debug trace so field issues can be diagnosed from the UI journal."""
+    if cloudlog is None:
+      return
+    now = time.monotonic()
+    if now - self._roll_warn_log_ts < 2.0:
+      return
+    self._roll_warn_log_ts = now
+    try:
+      cloudlog.debug(f"roll_warn {message}")
+    except Exception:
+      pass
+
   def _draw_roll_warn(self, lead_data, lead_vehicle, v_ego: float, rect: rl.Rectangle):
     """Flash a red alert when creeping forward at low speed towards the lead vehicle."""
-    thresholds = self._roll_warn_thresholds()
-    if thresholds is None:
-      return
+    now = time.monotonic()
 
-    if not lead_data.status or not lead_vehicle.chevron or len(lead_vehicle.chevron) < 2:
+    thresholds = self._roll_warn_thresholds()
+    if thresholds is None or not lead_data.status:
+      self._roll_warn_hold_until = 0.0
       return
 
     dist, vmax = thresholds
     d_rel = lead_data.dRel
     v_rel = lead_data.vRel
 
-    # Only when slow, the lead is close and we are still closing in on it.
-    if v_ego >= vmax or d_rel >= dist or v_rel >= -0.3:
+    # Hysteresis: once fired, stay latched so a single noisy radar frame does not kill the alert.
+    holding = now < self._roll_warn_hold_until
+    dist_limit = dist * (1.25 if holding else 1.0)
+    vmax_limit = vmax * (1.3 if holding else 1.0)
+
+    if ROLL_WARN_VEGO_MIN <= v_ego < vmax_limit and d_rel < dist_limit and v_rel < ROLL_WARN_VREL_MIN:
+      self._roll_warn_hold_until = now + ROLL_WARN_HOLD_S
+    elif not holding:
+      self._roll_warn_log(f"idle v_ego={v_ego:.2f} d_rel={d_rel:.2f} v_rel={v_rel:.2f} dist={dist:.1f} vmax={vmax:.2f}")
       return
 
     # 3 Hz blink, 50% duty cycle
-    if (time.monotonic() * ROLL_WARN_BLINK_HZ) % 1.0 > 0.5:
+    if (now * ROLL_WARN_BLINK_HZ) % 1.0 > 0.5:
       return
 
-    chevron_x = lead_vehicle.chevron[1][0]
-    chevron_y = lead_vehicle.chevron[1][1]
+    # Anchor the text above the lead chevron; fall back to screen centre when the projection drops out.
+    if lead_vehicle.chevron and len(lead_vehicle.chevron) >= 2:
+      chevron_x = lead_vehicle.chevron[1][0]
+      chevron_y = lead_vehicle.chevron[1][1]
+    else:
+      chevron_x = rect.width * 0.5
+      chevron_y = rect.height * 0.62
+
     sz = np.clip((25 * 30) / (d_rel / 3 + 30), 15.0, 30.0) * 2.35
 
     # Text grows as the gap closes.
@@ -211,6 +262,7 @@ class ChevronMetrics:
     y = int(chevron_y - sz - font_size - margin)
     if y < margin:
       y = int(min(rect.height - font_size - margin, chevron_y + sz + 15))
+    y = int(np.clip(y, margin, max(margin, rect.height - font_size - margin)))
 
     rl.draw_text_ex(self._font, text, rl.Vector2(x + 2, y + 2), font_size, 0, rl.Color(0, 0, 0, 200))
     rl.draw_text_ex(self._font, text, rl.Vector2(x, y), font_size, 0, rl.Color(255, 40, 40, 255))
